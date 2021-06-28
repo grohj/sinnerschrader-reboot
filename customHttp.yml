@@ -1,0 +1,19 @@
+customHeaders:
+  - pattern: '**/*'
+    headers:
+      - key: 'custom-header-name-1'
+        value: 'pattern-star-star-slash-star'
+      - key: 'Strict-Transport-Security'
+      value: 'max-age=31536000; includeSubDomains'
+      - key: 'X-Frame-Options'
+        value: 'SAMEORIGIN'
+      - key: 'X-XSS-Protection'
+        value: '1; mode=block'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'Content-Security-Policy'
+        value: 'default-src self'
+  - pattern: '/*'
+    headers:
+      - key: 'custom-header-name-1'
+        value: 'pattern-slash-star'
